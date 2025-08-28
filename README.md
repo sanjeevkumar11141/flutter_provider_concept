@@ -140,8 +140,6 @@ child: Text('-'),
 }
 }
 
-text
-
 ## 🎯 Interview Guide
 
 ### How to Answer About Provider in Interviews:
@@ -173,8 +171,6 @@ create: (context) => UserModel(),
 child: MyApp(),
 )
 
-text
-
 #### MultiProvider (Multiple States)
 MultiProvider(
 providers: [
@@ -185,16 +181,12 @@ Provider<ApiService>(create: (_) => ApiService()),
 child: MyApp(),
 )
 
-text
-
 #### FutureProvider (Async Data)
 FutureProvider<String>(
 create: (context) => fetchUserName(),
 initialData: "Loading...",
 child: MyWidget(),
 )
-
-text
 
 ### ⚡ Performance Optimization Techniques:
 
@@ -210,15 +202,11 @@ final counter = context.watch<CounterModel>();
 return Text('${counter.count}');
 }
 
-text
-
 #### 2. Selector for Specific Properties
 Selector<UserModel, String>(
 selector: (context, user) => user.name, // Only listen to name changes
 builder: (context, name, child) => Text(name),
 )
-
-text
 
 #### 3. Use listen: false for Actions
 // Don't listen to changes, just perform action
@@ -226,14 +214,10 @@ onPressed: () => Provider.of<CounterModel>(context, listen: false).increment(),
 // Or use context.read()
 onPressed: () => context.read<CounterModel>().increment(),
 
-text
-
 #### ProxyProvider (Dependent Providers)
 ProxyProvider<AuthModel, ApiService>(
 update: (context, auth, previousApiService) => ApiService(auth.token),
 )
-
-text
 
 ## 📊 Key Components Summary
 
@@ -274,13 +258,9 @@ flutter:
 sdk: flutter
 provider: ^6.0.5
 
-text
-
 ### Import
 
 import 'package:provider/provider.dart';
-
-text
 
 ### Quick Start
 
@@ -298,10 +278,3 @@ text
 
 Feel free to contribute to this guide by submitting pull requests or opening issues for improvements and corrections.
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-*This comprehensive guide covers Provider from basic concepts to advanced usage, giving you everything needed to understand, implement, and discuss Provider effectively in interviews and real-world projects.*
